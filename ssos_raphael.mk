@@ -1,4 +1,4 @@
-# Copyright (C) 2020 YAAP
+# Copyright (C) 2021 ShapeShiftOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,21 +15,27 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common YAAP stuff.
-$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
-
-#Boot Animation
-scr_resolution := 1080
+# Inherit some common ShapeShiftOS stuff.
+$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := yaap_raphael
+PRODUCT_NAME := ssos_raphael
 PRODUCT_DEVICE := raphael
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9T Pro
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="raphael" \
-    TARGET_DEVICE="raphael"
+    PRODUCT_NAME="raphael"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# ShapeShiftOS stuff
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.ssos.cpu=SD855
+
+SSOS_BUILD_TYPE := OFFICIAL
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_USES_BLUR := true
+EXTRA_FOD_ANIMATIONS := true
