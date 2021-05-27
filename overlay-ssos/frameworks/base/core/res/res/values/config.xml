@@ -27,4 +27,7 @@
 
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_enableSmartPixels">true</bool>
+
+    <!-- Whether the device has a popup camera -->
+    <bool name="config_hasPopupCamera">true</bool>
 </resources>
