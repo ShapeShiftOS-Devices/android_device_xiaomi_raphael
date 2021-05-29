@@ -23,10 +23,3 @@ cc_library_static {
         "system/core/init"
     ]
 }
-
-prebuilt_etc {
-    name: "init.raphael.wlan.rc",
-    src: "init.raphael.wlan.rc",
-    sub_dir: "init",
-    vendor: true,
-}
