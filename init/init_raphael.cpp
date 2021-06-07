@@ -86,6 +86,10 @@ void vendor_load_properties()
         property_override("ro.product.model", "Mi 9T Pro");
     }
 
+    if (region.find("CN") != std::string::npos ||
+        region.find("GLOBAL") != std::string::npos)
+        property_override("ro.boot.product.hardware.sku", "raphael");
+
     // fingerprint
     property_override("ro.build.description", "dipper-user 8.1.0 OPM1.171019.011 V9.5.5.0.OEAMIFA release-keys");
     property_override_multi("ro.build.fingerprint", "ro.vendor.build.fingerprint","ro.bootimage.build.fingerprint", "Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys");
