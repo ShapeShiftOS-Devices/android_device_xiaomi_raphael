@@ -86,12 +86,6 @@ void vendor_load_properties()
         property_override("ro.product.model", "Mi 9T Pro");
     }
 
-    // change board name for india
-    if (region.find("INDIA") != std::string::npos) {
-        property_override("ro.product.device", "raphaelin");
-        property_override("ro.build.product", "raphaelin");
-    }
-
     // fingerprint
     property_override("ro.build.description", "dipper-user 8.1.0 OPM1.171019.011 V9.5.5.0.OEAMIFA release-keys");
     property_override_multi("ro.build.fingerprint", "ro.vendor.build.fingerprint","ro.bootimage.build.fingerprint", "Xiaomi/dipper/dipper:8.1.0/OPM1.171019.011/V9.5.5.0.OEAMIFA:user/release-keys");
